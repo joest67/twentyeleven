@@ -573,6 +573,21 @@ function twentyeleven_comment( $comment, $args, $depth ) {
 }
 endif; // ends check for twentyeleven_comment()
 
+if ( ! function_exists( 'twentyeleven_show_time' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ * Create your own twentyeleven_posted_on to override in a child theme
+ *
+ * @since Twenty Eleven 1.0
+ */
+function twentyeleven_show_time() {
+	printf(  '<time class="entry-date" datetime="%1$s">%2$s</time>' ,
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() )
+	);
+}
+endif;
+
 if ( ! function_exists( 'twentyeleven_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.

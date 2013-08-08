@@ -734,6 +734,11 @@ a:hover {
 .entry-header .entry-meta {
 	padding-right: 76px;
 }
+.entry-time {
+	font-size:18px;
+        color: #999;
+	font-weight: bold;
+}
 .entry-title {
 	clear: both;
 	color: #222;
@@ -1745,7 +1750,7 @@ section.recent-posts .other-recent-posts li:after {
 
 /* Singular navigation */
 #nav-single {
-	float: right;
+	float: center;
 	position: relative;
 	top: -0.3em;
 	text-align: right;
