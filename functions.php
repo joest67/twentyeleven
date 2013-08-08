@@ -600,6 +600,7 @@ endif;
  *
  * @since Twenty Eleven 1.0
  */
+/**
 function twentyeleven_body_classes( $classes ) {
 
 	if ( function_exists( 'is_multi_author' ) && ! is_multi_author() )
