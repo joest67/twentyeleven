@@ -588,6 +588,25 @@ function twentyeleven_show_time() {
 }
 endif;
 
+
+if ( ! function_exists( 'twentyeleven_show_author' ) ) :
+/**
+ * Prints HTML with meta information for the current post-date/time and author.
+ * Create your own twentyeleven_posted_on to override in a child theme
+ *
+ * @since Twenty Eleven 1.0
+ */
+function twentyeleven_show_author() {
+	printf(  '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span> <span class="sep">发表于 </span><time class="entry-date" datetime="%4$s">%5$s</time>', 
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'twentyeleven' ), get_the_author() ) ),
+		get_the_author(),
+                esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date( 'G:i' ) )
+	);
+}
+endif;
+
 if ( ! function_exists( 'twentyeleven_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
@@ -607,6 +626,39 @@ function twentyeleven_posted_on() {
 	);
 }
 endif;
+
+/**
+
+ This function helps to statistic views times of post.
+
+ */
+/* Postviews start */
+function getPostViews($postID){
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+        return " 0 ";
+    }
+    return $count;
+}
+
+function setPostViews($postID) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+       $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+
+/* Postviews start end*/
+
 
 /**
  * Adds two classes to the array of body classes.
