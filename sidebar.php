@@ -13,13 +13,6 @@ $current_layout = $options['theme_layout'];
 if ( 'content' != $current_layout ) :
 ?>
 		<div id="secondary" class="widget-area" role="complementary">
-		<aside class="widget">
-                <h3 class="widget-title">旅途</h3>
-                <?php $travel_posts = new WP_Query('category_name=travel'); ?>
-                <?php while ($travel_posts->have_posts()) : $travel_posts->the_post(); ?>   
-                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>   
-		<?php endwhile; ?>  
-            </aside>
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
 				<aside id="archives" class="widget">
