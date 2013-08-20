@@ -1737,13 +1737,15 @@ section.recent-posts .other-recent-posts li:after {
 }
 .nav-previous {
 	float: left;
-	width: 50%;
 }
 .nav-next {
-	float: right;
-	text-align: right;
-	width: 50%;
+	float: left;
+	text-align: left;
 }
+.nav-home {
+	float: left;
+}
+
 #content nav .meta-nav {
 	font-weight: normal;
 }
@@ -1757,7 +1759,8 @@ section.recent-posts .other-recent-posts li:after {
 	z-index: 1;
 }
 #nav-single .nav-previous,
-#nav-single .nav-next {
+#nav-single .nav-next,
+#nav-home .nav-home {
 	width: auto;
 }
 #nav-single .nav-next {
@@ -1767,6 +1770,10 @@ section.recent-posts .other-recent-posts li:after {
 	padding-right: .5em;
 }
 
+#nav-single .nav-home {
+	padding-left: .5em;
+	padding-right: .5em;
+}
 
 /* =Widgets
 ----------------------------------------------- */

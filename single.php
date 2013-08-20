@@ -22,7 +22,7 @@ get_header(); ?>
                 if (!empty( $prev_post )): ?>
                     <a href="<?php echo get_permalink( $prev_post->ID ); ?>"><span class="nav-previous"><?php printf("上一篇: %s", $prev_post->post_title ); ?></a></span>
                 <?php endif; ?>
-		
+		 <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><span class="nav-home">首页</span></a>
 		<?php
                 $next_post = get_next_post();
                 if (!empty( $next_post )): ?>
