@@ -88,15 +88,19 @@ body {
 	width: 100%;
 }
 #content {
-	margin: 0 34% 0 7.6%;
-	width: 58.4%;
+	margin: 0 26% 0 0%;
+	width: 72%;
 }
 #secondary {
 	float: right;
-	margin-right: 7.6%;
 	width: 18.8%;
+	background: #fff;
+	padding: 1em 2em;
 }
 
+#content article {
+	background: #fff;
+}
 /* Singular */
 .singular #primary {
 	margin: 0;
@@ -324,7 +328,7 @@ body {
 	background: #e2e2e2;
 }
 #page {
-	background: #fff;
+	background: transplant;
 }
 
 /* Headings */
@@ -742,7 +746,7 @@ a:hover {
 .entry-title {
 	clear: both;
 	color: #222;
-	font-size: 16px;
+	font-size: 20px;
 	font-weight: bold;
 	line-height: 1.5em;
 	padding-bottom: .3em;
@@ -774,6 +778,12 @@ a:hover {
 .entry-content,
 .entry-summary {
 	padding: 1em 0 0;
+}
+
+.entry-content,
+.entry-header,
+.entry-meta {
+	padding: 1.625em 7.6% 0;
 }
 .entry-content h1,
 .entry-content h2,

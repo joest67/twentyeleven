@@ -32,7 +32,22 @@ get_header(); ?>
 
 					<?php get_template_part( 'content-single', get_post_format() ); ?>
 
-					<?php comments_template( '', true ); ?>
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"joest"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->
+
+					<?php //comments_template( '', true ); ?>
 	
 			<?php endwhile; // end of the loop. ?>
 
